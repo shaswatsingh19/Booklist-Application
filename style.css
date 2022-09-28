@@ -18,7 +18,7 @@ h1 span{
     color: rgb(21, 133, 232);
     letter-spacing: 3px;
 }
-i{
+header i{
     font-size: 2rem;
     margin-right: 10px;
 }
@@ -70,7 +70,9 @@ table{
 
 thead{
     height:  50px;
-    border-bottom: 1px solid ;
+    border-bottom: 1.2px solid ;
+    border-top: 1px solid ;
+    background-color: rgb(243, 242, 240);
 }
 td{
     height: 40px;
