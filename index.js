@@ -1,5 +1,6 @@
 const form = document.querySelector('form')
 const bookList = document.querySelector('#book-list')
+
 class Book{
     constructor(title,author,isbn){
         this.title = title
@@ -36,7 +37,16 @@ class UI{
         list.append(row)
     }
 
-    
+    static deleteBook(ele){
+
+        if(ele.classList.contains('delete')){
+            bookList.removeChild(ele.parentNode.parentNode)
+        }
+    }
+
+    static resetForm(){
+        form.reset()
+    }
 
     
 }
@@ -57,17 +67,13 @@ form.addEventListener('submit',function(e) {
 
     UI.addBookToList(book)
 
-    
-    form.reset()
+    UI.resetForm()
 })
 
 
 bookList.addEventListener('click',function(e){
 
-    if(e.target.classList.contains('delete')){
-        
-        bookList.removeChild(e.target.parentNode.parentNode)
-    }
+    UI.deleteBook(e.target)
 
 })
 
