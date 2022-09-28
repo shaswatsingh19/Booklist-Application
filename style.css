@@ -61,8 +61,8 @@ input[type='submit']:active{
 
 table{
     margin: 10px auto;
-    width: 95%;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1100px;
     text-align: center;
     font-size: 1.2em;
     border-collapse: collapse;
@@ -76,11 +76,8 @@ td{
     height: 40px;
     width: 40%;
 }
-td:first-child{
-    width: 45%;
-}
 
 td:last-child{
-    width: 15%;
+    width: 20%;
 }
 
