@@ -40,6 +40,10 @@ input,label{
     margin-bottom: 8px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+label{
+    font-weight: 900;
+    align-self: flex-start;
+}
 
 input[type='submit']{
     margin-top: 10px;
