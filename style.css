@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+
+.container{
+    
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1 span{
+    color: rgb(21, 133, 232);
+    letter-spacing: 3px;
+}
+i{
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 95%;
+    max-width: 600px;
+    justify-content: center;
+    margin: 10px auto;
+}
+input{
+    padding: 5px;
+}
+input,label{
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input[type='submit']{
+    margin-top: 10px;
+    font-size: 2rem;
+    border-radius: 18px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(127, 14, 233);
+    border: none;
+    transition: transform .8s;
+}
+
+input[type='submit']:hover{
+    background-color: rgb(84, 8, 155);
+}
+input[type='submit']:active{
+    transform: scale(.98);
+}
+
+table{
+    margin: 10px auto;
+    width: 95%;
+    max-width: 1000px;
+    text-align: center;
+    font-size: 1.2em;
+    border-collapse: collapse;
+}
+
+thead{
+    height:  50px;
+    border-bottom: 1px solid ;
+}
+td{
+    height: 40px;
+    width: 40%;
+}
+td:first-child{
+    width: 45%;
+}
+
+td:last-child{
+    width: 15%;
+}
+
