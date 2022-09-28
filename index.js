@@ -11,13 +11,8 @@ class Book{
 
 class UI{
     static displayBooks(){
-        const storedBooks = [
-            {
-                title:'Book 1',
-                author: "Author 1",
-                isbn : 'isbn 1'
-            }
-        ]
+        const storedBooks = Store.getBooks()
+        
         const books = storedBooks;
 
         books.forEach(book => UI.addBookToList(book))
@@ -37,6 +32,7 @@ class UI{
         list.append(row)
     }
 
+    
     static deleteBook(ele){
 
         if(ele.classList.contains('delete')){
@@ -46,10 +42,48 @@ class UI{
 
     static resetForm(){
         form.reset()
+    }    
+}
+
+
+// class For Storing 
+class Store{
+
+    static getBooks(){
+        let books
+        if(localStorage.getItem('books')){
+            books = JSON.parse(localStorage.getItem('books'))
+        }else{
+            books = []
+        }
+        return books
     }
 
-    
+    static addBook(book){
+        const books = Store.getBooks()
+
+        books.push(book)
+
+        localStorage.setItem('books',JSON.stringify(books))
+
+    }
+
+    static removeBook(isbn){
+        const books = Store.getBooks()
+
+        books.forEach((book , index) => {
+            if(book.isbn === isbn){
+                books.splice(index,1)
+            }
+        })
+
+        localStorage.setItem('books',JSON.stringify(books))
+
+
+    }
 }
+
+Store.getBooks()
 
 // As soon as dom loaded 
 document.addEventListener('DOMContentLoaded',UI.displayBooks)
@@ -65,15 +99,23 @@ form.addEventListener('submit',function(e) {
     // creating new instant  of Book
     const book = new Book(title,author,isbn)
 
+    
     UI.addBookToList(book)
-
     UI.resetForm()
+
+
+    Store.addBook(book)
+
 })
 
 
 bookList.addEventListener('click',function(e){
 
+    
+    const isbn = e.path[0].parentElement.parentElement.children[2].textContent
+    Store.removeBook(isbn)
+    
     UI.deleteBook(e.target)
-
+    
 })
 
